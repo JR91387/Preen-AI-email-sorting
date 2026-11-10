@@ -1,6 +1,6 @@
 # Jev API notes
 
-What we've confirmed about the API Preen uses, and where it came from. Code is written from these documented facts only (clean room).
+What we have confirmed about the API Preen uses, and where each fact came from. The code follows these documented facts only.
 
 ## Sources (checked 2026-09-30)
 - LiteLLM pass-through docs for TypeSafe: https://docs.litellm.ai/docs/pass_through/typesafe
@@ -33,7 +33,7 @@ The request body is identical for both. OpenRouter's response adds `id`, `provid
 - `choice`: up to 255 options, one picked. `criteria` maps each label to its description.
 - `score`: `criteria` is an ordered list of levels.
 - `noul`: a yes/no question answered as a probability from 0 to 1.
-- Instructions may refer to fields inside `state` with backticked paths, e.g. `` `email.subject` ``.
+- Instructions can refer to fields inside `state` with backticked paths, for example `` `email.subject` ``.
 
 ## Response
 ```json
@@ -50,18 +50,15 @@ The request body is identical for both. OpenRouter's response adds `id`, `provid
   "usage": { "input_tokens": 312, "output_tokens": 48 }
 }
 ```
-- Choice `confidence` = `(count × peak − 1) / (count − 1)`, where `peak` is the highest probability.
-- **Not yet seen in raw JSON:** the field name for a noul answer. The SDKs expose it as `.noul`. Preen's `readNoul()` accepts `noul`, `probability` or `value` until this is confirmed with a real call.
+- A choice's `confidence` is `(count × peak − 1) / (count − 1)`, where `peak` is the highest probability.
+- The raw JSON field name for a noul answer is not confirmed. The SDKs expose it as `.noul`. Preen's `readNoul()` accepts `noul`, `probability` or `value`.
 
 ## Models
 - TypeSafe: `jev-1.13.0`, `jev-latest`, `jev-preview`.
-- OpenRouter examples use `jev-1.13`. **To confirm** with Test connection.
+- OpenRouter examples use `jev-1.13`. This is unconfirmed. Test connection checks it.
 
 ## Pricing and limits
-- As of 2026-09-30: $0.042 per million input tokens; output tokens are free. **Reference only.** Preen has no built-in price, because prices vary by provider and over time. It measures tokens, and shows cost only when the provider reports it (OpenRouter's `usage.cost`) or the user enters a price.
+- As of 2026-09-30, input costs $0.042 per million tokens and output tokens are free. This is for reference only. Preen has no built-in price, because prices vary by provider and over time. It measures tokens, and shows cost only when the provider reports it in OpenRouter's `usage.cost` or the user enters a price.
 - No streaming.
-- Asking several questions in one call uses far fewer tokens than separate calls.
-- Documented weak spots: counting, arithmetic, date comparison, and large amounts of irrelevant state.
-
-## Measured with Preen
-_To fill in after testing on real mail: average input tokens per email, and cost per 10,000 emails._
+- Asking several questions in one call uses far fewer tokens than asking them in separate calls.
+- Documented weak spots are counting, arithmetic, date comparison and large amounts of irrelevant state.

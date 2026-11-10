@@ -6,15 +6,15 @@ Planned, not started. Nothing in this folder runs yet. Preen is available for Th
 
 ## Platform
 
-KMail plugins are C++ (KDE Frameworks, Akonadi). KMail's filters can also run an external program on each message ("Execute Command" or "Pipe Through", with placeholders such as `%{itemid}`), and filtering runs in the Akonadi mail filter agent as mail arrives.
+KMail plugins are C++ and use KDE Frameworks and Akonadi. KMail's filters can also run an external program on each message, with "Execute Command" or "Pipe Through" and placeholders such as `%{itemid}`. Filtering runs in the Akonadi mail filter agent as mail arrives.
 
 ## How Preen would fit
 
-Two possible routes: a filter that runs a small Preen program on each new message, or a native C++ plugin. How a program would apply tags back in KMail is not confirmed.
+Two routes are possible. One is a filter that runs a small Preen program on each new message. The other is a native C++ plugin. How a program would apply tags back in KMail is not confirmed.
 
 ## What it can reuse
 
-Not inside KMail. A standalone JavaScript (Node) program using `packages/shared` could be called from a filter (unverified). Otherwise a rewrite in C++.
+Nothing inside KMail. A standalone Node program that uses `packages/shared` could run from a filter (unverified). Otherwise Preen needs a rewrite in C++.
 
 ## Store and packaging
 
@@ -22,7 +22,7 @@ Linux distribution packages. Details unverified.
 
 ## Release tag
 
-`kmail-vX.Y.Z` (reserved).
+`kmail-vX.Y.Z`, reserved.
 
 ## Label
 

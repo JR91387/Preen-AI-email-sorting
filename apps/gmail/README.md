@@ -10,11 +10,11 @@ A Google Workspace add-on, written in Apps Script (JavaScript) with a JSON manif
 
 ## How Preen would fit
 
-An add-on runs when the user opens a message; Google offers no add-on trigger for newly received mail. Apps Script can apply labels, archive and move to spam or trash. Automatic sorting would need an hourly time trigger (at most once an hour for add-ons) or a separate server using the Gmail API's push notifications. Either changes Preen's privacy story, because mail would be handled by a script or server rather than only on the user's computer.
+An add-on runs when the user opens a message. Google offers no add-on trigger for newly received mail. Apps Script can apply labels, archive and move to spam or trash. Automatic sorting would need an hourly time trigger, which add-ons can run at most once an hour, or a separate server that uses the Gmail API's push notifications. Either route would change who handles the mail, because a script or server would handle it instead of only the user's computer.
 
 ## What it can reuse
 
-`packages/shared` bundled into Apps Script, or run on a server with the HTTP runtime (both unverified).
+`packages/shared`, either bundled into Apps Script or run on a server with the HTTP runtime. Both are unverified.
 
 ## Store and packaging
 
@@ -22,7 +22,7 @@ Google Workspace Marketplace, with app review and OAuth verification. Scopes tha
 
 ## Release tag
 
-`gmail-vX.Y.Z` (reserved).
+`gmail-vX.Y.Z`, reserved.
 
 ## Label
 

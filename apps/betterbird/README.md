@@ -6,11 +6,11 @@ Planned, not started. Nothing in this folder runs yet. Preen is available for Th
 
 ## Platform
 
-Betterbird is a fork of Thunderbird ESR (Extended Support Release). It runs Thunderbird MailExtensions: JavaScript with the `messenger.*` APIs, the same technology as `apps/thunderbird`. Its current releases are based on Thunderbird 153 ESR.
+Betterbird is a fork of Thunderbird ESR (Extended Support Release). It runs Thunderbird MailExtensions, which are JavaScript with the `messenger.*` APIs, the same technology as `apps/thunderbird`. Its current releases are based on Thunderbird 153 ESR.
 
 ## How Preen would fit
 
-Most likely no separate add-on at all. Betterbird says it is "100% compatible with Thunderbird's ESR version", and it can install add-ons from addons.thunderbird.net or from a file. The Thunderbird `.xpi` needs Thunderbird 140 or newer, which Betterbird 153 meets. The work is testing the Thunderbird build on Betterbird and fixing anything that differs.
+Preen probably needs no separate add-on. Betterbird says it is "100% compatible with Thunderbird's ESR version". It can install add-ons from addons.thunderbird.net or from a file. The Thunderbird `.xpi` needs Thunderbird 140 or newer, which Betterbird 153 meets. The work is to test the Thunderbird build on Betterbird and fixing anything that differs.
 
 ## What it can reuse
 

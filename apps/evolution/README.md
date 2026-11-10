@@ -6,7 +6,7 @@ Planned, not started. Nothing in this folder runs yet. Preen is available for Th
 
 ## Platform
 
-Native C/GObject extensions (the EExtension framework, which replaces the older EPlugin). GNOME developers point to C modules; there are no Python bindings for plugins. Evolution's JavaScript plugins only change how messages are displayed or edited.
+Native C/GObject extensions, using the EExtension framework that replaces the older EPlugin. GNOME developers point to C modules, and plugins have no Python bindings. Evolution's JavaScript plugins only change how messages are displayed or edited.
 
 ## How Preen would fit
 
@@ -14,7 +14,7 @@ A C extension that hooks into mail handling. Which hooks an extension gets for n
 
 ## What it can reuse
 
-Not for handling mail. A rewrite in C, or an external program, would be needed.
+Nothing for handling mail. Preen would need a rewrite in C or an external program.
 
 ## Store and packaging
 
@@ -22,7 +22,7 @@ Linux distribution packages or Flatpak. Details unverified.
 
 ## Release tag
 
-`evolution-vX.Y.Z` (reserved).
+`evolution-vX.Y.Z`, reserved.
 
 ## Label
 

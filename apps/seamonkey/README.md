@@ -6,11 +6,11 @@ Planned, not started. Nothing in this folder runs yet. Preen is available for Th
 
 ## Platform
 
-SeaMonkey 2.53 uses the older XUL/XPCOM add-on system. Its release notes say it "does not currently support the WebExtensions add-on api" (only dictionaries and language packs in that format). Support for WebExtensions is described as planned, with no date.
+SeaMonkey 2.53 uses the older XUL/XPCOM add-on system. Its release notes say it "does not currently support the WebExtensions add-on api" for everything except dictionaries and language packs. The release notes describe WebExtensions support as planned and give no date.
 
 ## How Preen would fit
 
-Not possible with today's add-on. Preen for SeaMonkey would need either SeaMonkey to support WebExtensions, or a separate legacy add-on.
+Preen cannot run on SeaMonkey with today's add-on. Preen for SeaMonkey would need SeaMonkey to support WebExtensions, or a separate legacy add-on.
 
 ## What it can reuse
 
@@ -22,7 +22,7 @@ The SeaMonkey add-ons site. Signing and review rules are not known yet.
 
 ## Release tag
 
-`seamonkey-vX.Y.Z` (reserved).
+`seamonkey-vX.Y.Z`, reserved.
 
 ## Label
 

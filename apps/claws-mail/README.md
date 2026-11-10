@@ -6,7 +6,7 @@ Planned, not started. Nothing in this folder runs yet. Preen is available for Th
 
 ## Platform
 
-Native plugins in C, plus a Perl plugin (a Perl interface to the filtering system) and a Python plugin.
+Native plugins in C, plus a Perl plugin that gives Perl access to the filtering system, and a Python plugin.
 
 ## How Preen would fit
 
@@ -14,7 +14,7 @@ The Perl filter script runs as part of filtering incoming mail and can mark and 
 
 ## What it can reuse
 
-Not inside Claws Mail, which has no JavaScript engine. An external JavaScript program called from a Perl or Python filter is possible (unverified). Otherwise a rewrite.
+Nothing inside Claws Mail, which has no JavaScript engine. An external JavaScript program called from a Perl or Python filter is possible (unverified). Otherwise Preen needs a rewrite.
 
 ## Store and packaging
 
@@ -22,7 +22,7 @@ Linux distribution packages, for example `claws-mail-perl-filter` and `claws-mai
 
 ## Release tag
 
-`claws-mail-vX.Y.Z` (reserved).
+`claws-mail-vX.Y.Z`, reserved.
 
 ## Label
 

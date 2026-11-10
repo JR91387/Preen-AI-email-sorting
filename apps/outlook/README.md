@@ -10,7 +10,7 @@ Office web add-ins (Office.js), written in JavaScript or TypeScript, with an XML
 
 ## How Preen would fit
 
-An add-in can set categories on a message (Mailbox requirement set 1.8). Outlook documents no add-in event for newly received mail, so automatic sorting would need either the user to act on each message or a separate server service using Microsoft Graph change notifications.
+An add-in can set categories on a message, using Mailbox requirement set 1.8. Outlook documents no add-in event for newly received mail. Automatic sorting would need either the user to act on each message or a separate server service that uses Microsoft Graph change notifications.
 
 ## What it can reuse
 
@@ -22,7 +22,7 @@ Microsoft Marketplace (AppSource) or deployment by an organisation's admin in th
 
 ## Release tag
 
-`outlook-vX.Y.Z` (reserved).
+`outlook-vX.Y.Z`, reserved.
 
 ## Label
 
@@ -31,8 +31,8 @@ Issues and pull requests for this app use the `app:outlook` label (`.github/labe
 ## Open questions
 
 - How to sort new mail automatically without a server.
-- Whether moving mail and marking junk are possible from an add-in (Graph can move messages; unverified for junk).
-- Gmail and other non-Microsoft accounts in Outlook can't use add-ins.
+- Whether an add-in can move mail and mark junk. Graph can move messages. Junk is unverified.
+- Gmail and other non-Microsoft accounts in Outlook cannot use add-ins.
 
 ## Sources
 
