@@ -1,0 +1,8 @@
+dist/
+node_modules/
+*.xpi
+.DS_Store
+.env
+web-ext-artifacts/
+.ruff_cache/
+__pycache__/

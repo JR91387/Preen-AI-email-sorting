@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1184 322" width="1184" height="322" role="img" aria-label="Preen pipeline: message, local checks, ask Jev, decide, apply or preview. Only step 3 leaves your computer.">
+<rect width="1184" height="322" fill="#ffffff"/>
+<defs><marker id="ar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#0060df"/></marker></defs>
+<rect x="12" y="18" width="458" height="254" rx="14" fill="#eef3fb"/>
+<text x="26" y="40" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12.5" font-weight="700" letter-spacing="0.6" fill="#4a4a55">ON YOUR COMPUTER</text>
+<rect x="480" y="18" width="224" height="254" rx="14" fill="#fff4e5" stroke="#b45309" stroke-width="1.6" stroke-dasharray="6 5"/>
+<text x="494" y="40" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12.5" font-weight="700" letter-spacing="0.6" fill="#b45309">LEAVES YOUR COMPUTER</text>
+<rect x="714" y="18" width="458" height="254" rx="14" fill="#eef3fb"/>
+<text x="728" y="40" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12.5" font-weight="700" letter-spacing="0.6" fill="#4a4a55">ON YOUR COMPUTER</text>
+<rect x="24" y="58" width="200" height="202" rx="10" fill="#f4f6fb" stroke="#c9d3e6" stroke-width="1.2"/>
+<circle cx="48" cy="84" r="13" fill="#0060df"/>
+<text x="48" y="89" text-anchor="middle" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="14" font-weight="700" fill="#ffffff">1</text>
+<text x="70" y="89" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="16" font-weight="700" fill="#15141a">Message</text>
+<text x="40" y="120" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#15141a">Thunderbird hands Preen</text>
+<text x="40" y="140" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#15141a">a message: sender,</text>
+<text x="40" y="160" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#15141a">subject, headers,</text>
+<text x="40" y="180" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#15141a">attachment names</text>
+<text x="40" y="200" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#15141a">and the text.</text>
+<rect x="258" y="58" width="200" height="202" rx="10" fill="#f4f6fb" stroke="#c9d3e6" stroke-width="1.2"/>
+<circle cx="282" cy="84" r="13" fill="#0060df"/>
+<text x="282" y="89" text-anchor="middle" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="14" font-weight="700" fill="#ffffff">2</text>
+<text x="304" y="89" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="16" font-weight="700" fill="#15141a">Local checks</text>
+<text x="274" y="120" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#15141a">Headers and the address</text>
+<text x="274" y="140" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#15141a">book settle easy cases</text>
+<text x="274" y="160" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#15141a">for free.</text>
+<text x="274" y="180" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#15141a">Optional: spot card or</text>
+<text x="274" y="200" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#15141a">ID numbers, and keep</text>
+<text x="274" y="220" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#15141a">that mail from being sent.</text>
+<text x="274" y="240" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#15141a">Trim quotes and signatures.</text>
+<rect x="492" y="58" width="200" height="202" rx="10" fill="#f4f6fb" stroke="#c9d3e6" stroke-width="1.2"/>
+<circle cx="516" cy="84" r="13" fill="#0060df"/>
+<text x="516" y="89" text-anchor="middle" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="14" font-weight="700" fill="#ffffff">3</text>
+<text x="538" y="89" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="16" font-weight="700" fill="#15141a">Ask Jev</text>
+<text x="508" y="120" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#15141a">Your own API key, via</text>
+<text x="508" y="140" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#15141a">OpenRouter or TypeSafe.</text>
+<text x="508" y="160" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#15141a">Surface: metadata only.</text>
+<text x="508" y="180" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#15141a">Deep: metadata and text.</text>
+<text x="508" y="200" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#15141a">Returns probabilities,</text>
+<text x="508" y="220" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#15141a">not decisions.</text>
+<rect x="726" y="58" width="200" height="202" rx="10" fill="#f4f6fb" stroke="#c9d3e6" stroke-width="1.2"/>
+<circle cx="750" cy="84" r="13" fill="#0060df"/>
+<text x="750" y="89" text-anchor="middle" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="14" font-weight="700" fill="#ffffff">4</text>
+<text x="772" y="89" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="16" font-weight="700" fill="#15141a">Decide</text>
+<text x="742" y="120" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#15141a">Your thresholds turn the</text>
+<text x="742" y="140" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#15141a">probabilities into tags.</text>
+<text x="742" y="160" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#15141a">When unsure, Preen does</text>
+<text x="742" y="180" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#15141a">less, never more.</text>
+<text x="742" y="200" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#15141a">Jev judges, code decides.</text>
+<rect x="960" y="58" width="200" height="202" rx="10" fill="#f4f6fb" stroke="#c9d3e6" stroke-width="1.2"/>
+<circle cx="984" cy="84" r="13" fill="#0060df"/>
+<text x="984" y="89" text-anchor="middle" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="14" font-weight="700" fill="#ffffff">5</text>
+<text x="1006" y="89" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="16" font-weight="700" fill="#15141a">Apply or preview</text>
+<text x="976" y="120" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#15141a">Preview and dry run only</text>
+<text x="976" y="140" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#15141a">log what would change.</text>
+<text x="976" y="160" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#15141a">Otherwise: set tags, flags</text>
+<text x="976" y="180" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#15141a">and Junk in Thunderbird,</text>
+<text x="976" y="200" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#15141a">and write the activity log.</text>
+<text x="976" y="220" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#15141a">Changes can be undone.</text>
+<line x1="227" y1="159.0" x2="251" y2="159.0" stroke="#0060df" stroke-width="2.2" marker-end="url(#ar)"/>
+<line x1="461" y1="159.0" x2="485" y2="159.0" stroke="#0060df" stroke-width="2.2" marker-end="url(#ar)"/>
+<line x1="695" y1="159.0" x2="719" y2="159.0" stroke="#0060df" stroke-width="2.2" marker-end="url(#ar)"/>
+<line x1="929" y1="159.0" x2="953" y2="159.0" stroke="#0060df" stroke-width="2.2" marker-end="url(#ar)"/>
+<text x="24" y="302" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#4a4a55">Only step 3 sends data off your computer. Everything else runs inside Thunderbird.</text>
+</svg>

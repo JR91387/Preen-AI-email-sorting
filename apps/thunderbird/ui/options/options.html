@@ -1,0 +1,522 @@
+<!doctype html>
+<!-- SPDX-License-Identifier: PolyForm-Shield-1.0.0 -->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="preen-version" content="0.0.29">
+  <script src="../shared/page-guard.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Preen settings</title>
+  <link rel="stylesheet" href="../shared/theme.css">
+  <link rel="stylesheet" href="options.css">
+</head>
+<body class="settings">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-plug" viewBox="0 0 16 16"><path d="M6 1.5v3M10 1.5v3M4 4.5h8v3a4 4 0 0 1-8 0v-3zM8 11.5v3"/></symbol>
+  <symbol id="i-inbox" viewBox="0 0 16 16"><path d="M2 9.5l1.8-6h8.4l1.8 6v4H2zM2 9.5h3.5l1 1.5h3l1-1.5H14"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 16 16"><circle cx="8" cy="8" r="6"/><path d="M8 4.5V8l2.5 1.5"/></symbol>
+  <symbol id="i-gauge" viewBox="0 0 16 16"><path d="M2.5 11.5a5.5 5.5 0 1 1 11 0"/><path d="M8 11.5 10.8 7"/><circle cx="8" cy="11.5" r="0.9"/></symbol>
+  <symbol id="i-tag" viewBox="0 0 16 16"><path d="M2 2h5.5L14 8.5 8.5 14 2 7.5zM5 5h.01"/></symbol>
+  <symbol id="i-person" viewBox="0 0 16 16"><circle cx="8" cy="5.5" r="2.8"/><path d="M2.5 14c.6-3 2.8-4.5 5.5-4.5s4.9 1.5 5.5 4.5"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 16 16"><path d="M8 1.5l5.5 2v4c0 3.5-2.4 5.9-5.5 7-3.1-1.1-5.5-3.5-5.5-7v-4z"/></symbol>
+  <symbol id="i-sliders" viewBox="0 0 16 16"><path d="M2 4h7M12 4h2M2 12h2M7 12h7M10.5 2.5v3M5.5 10.5v3"/></symbol>
+  <symbol id="i-check" viewBox="0 0 16 16"><circle cx="8" cy="8" r="6.2"/><path d="M5.3 8.2l1.8 1.8 3.6-3.8"/></symbol>
+  <symbol id="i-pause" viewBox="0 0 16 16"><circle cx="8" cy="8" r="6.2"/><path d="M6.5 5.8v4.4M9.5 5.8v4.4"/></symbol>
+  <symbol id="i-warn" viewBox="0 0 16 16"><path d="M8 2l6.5 11.5h-13zM8 6.5v3M8 11.5h.01"/></symbol>
+  <symbol id="i-info" viewBox="0 0 16 16"><circle cx="8" cy="8" r="6.2"/><path d="M8 7.2v4M8 4.8h.01"/></symbol>
+  <symbol id="i-lock" viewBox="0 0 16 16"><rect x="3" y="7" width="10" height="7" rx="1.5"/><path d="M5.5 7V5a2.5 2.5 0 0 1 5 0v2"/></symbol>
+  <symbol id="i-flag" viewBox="0 0 16 16"><path d="M3.5 14.5V2M3.5 2.5h8l-1.8 3 1.8 3h-8"/></symbol>
+  <symbol id="i-dot" viewBox="0 0 16 16"><circle cx="8" cy="8" r="3.2" fill="currentColor" stroke="none"/></symbol>
+  <symbol id="i-up" viewBox="0 0 16 16"><path d="M8 13V3M4 7l4-4 4 4"/></symbol>
+  <symbol id="i-down" viewBox="0 0 16 16"><path d="M8 3v10M4 9l4 4 4-4"/></symbol>
+  <symbol id="i-trash" viewBox="0 0 16 16"><path d="M2.5 4h11M6 4V2.5h4V4M4 4l.7 9.5h6.6L12 4"/></symbol>
+  <symbol id="i-caret" viewBox="0 0 16 16"><path d="M6 3.5L10.5 8 6 12.5"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 16 16"><path d="M8 3v10M3 8h10"/></symbol>
+  <symbol id="i-reply" viewBox="0 0 16 16"><path d="M6.5 4L2.5 8l4 4M2.5 8h7a4 4 0 0 1 4 4v1"/></symbol>
+  <symbol id="i-todo" viewBox="0 0 16 16"><rect x="2.5" y="2.5" width="11" height="11" rx="2"/><path d="M5.3 8.2l1.8 1.8 3.6-3.8"/></symbol>
+  <symbol id="i-list" viewBox="0 0 16 16"><path d="M5.5 4h8M5.5 8h8M5.5 12h8M2.5 4h.01M2.5 8h.01M2.5 12h.01"/></symbol>
+  <symbol id="i-save" viewBox="0 0 16 16"><path d="M2.5 2.5h9l2 2v9h-11zM5 2.5v3.5h5V2.5M5 13.5v-4h6v4"/></symbol>
+  <symbol id="i-eye" viewBox="0 0 16 16"><path d="M1.5 8s2.4-4.5 6.5-4.5S14.5 8 14.5 8 12.1 12.5 8 12.5 1.5 8 1.5 8z"/><circle cx="8" cy="8" r="2"/></symbol>
+  <symbol id="i-search" viewBox="0 0 16 16"><circle cx="7" cy="7" r="4.5"/><path d="M10.5 10.5 14 14"/></symbol>
+  <symbol id="i-chart" viewBox="0 0 16 16"><path d="M2.5 13.5h11M4.5 11V8M8 11V4.5M11.5 11V6.5"/></symbol>
+  <symbol id="i-feather" viewBox="0 0 128 128"><path d="M104 20C64 22 34 48 28 92l-8 16 14-6c42-4 70-34 70-82zM44 86c10-22 28-38 46-48-12 18-26 34-46 48z"/></symbol>
+  <symbol id="i-pen" viewBox="0 0 16 16"><path d="M10.5 2.5l3 3-8 8h-3v-3zM9 4l3 3"/></symbol>
+  <!-- Speed: one bird, slow to fast (perched, gliding, fast, on a rocket). -->
+  <symbol id="b-perch" viewBox="0 0 44 26" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 21.5L38.5 21.5M31.2 21.5L34.6 18.4"/><path d="M28.1 7.2L31.6 9.1L28.1 10.6C29.6 14.4 28.4 19.6 23 19.9C21 20 19.2 19.7 17.8 18.9L12.6 23.4L15.6 16.6C16.4 12 18.8 8.8 21.7 7.5C22.8 4.4 27 4.2 28.1 7.2Z"/><path d="M24.4 4.9C24 3 22.6 1.6 21.1 1.2M25.9 4.8C25.8 2.8 24.8 1.2 23.4 0.4"/><path d="M17.8 12.4C21.4 12.2 24.2 14.4 24.4 17.8C20.8 17.8 18.4 15.6 17.8 12.4Z"/><path d="M21.2 19.9L21.2 21.5M24.2 19.7L24.2 21.5"/><circle cx="25.9" cy="8.2" r="0.9" fill="currentColor" stroke="none"/></symbol>
+  <symbol id="b-glide" viewBox="0 0 44 26" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M35.5 11.2L39 13.1L35.5 14.6C34.8 17.6 31 19.4 25.4 19.3C21.2 19.2 17.4 18.2 14.4 16.8L7.6 17L14.4 13.8C18.4 12.2 23.6 11.2 29.1 11.5C30.2 8.4 34.4 8.2 35.5 11.2Z"/><path d="M31.8 8.9C31.05 7.25 29.51 6.16 27.84 5.93M33.3 8.8C32.78 6.87 31.43 5.48 29.68 4.85"/><path d="M25.4 11.4C23 6.6 17.6 3.2 10 2.6C12.8 6.8 16.2 10 20 12.2M22.8 11.4C19.6 8.4 16 6 12.4 4.4"/><circle cx="33.3" cy="12.2" r="0.9" fill="currentColor" stroke="none"/></symbol>
+  <symbol id="b-fast" viewBox="0 0 44 26" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2.2 11.4L7.6 11.4M1 15.2L9.2 15.2M3 19L8.2 19"/><path d="M39.3 12.2L42.8 14.1L39.3 15.6C38.2 17.8 34.6 18.8 29.8 18.6C25.6 18.4 21.4 17.4 18.4 16.2L12.6 15.4L18.6 13.6C23 12.4 28.4 11.6 32.9 12.5C34 9.4 38.2 9.2 39.3 12.2Z"/><path d="M35.6 9.9C34.2 8.7 32.4 8.2 30.4 8.3M37.1 9.8C35.8 8 33.8 7 31.4 6.7"/><path d="M29.6 12.2C25.6 9.4 19.6 8.2 11.2 8.6C16.6 10.4 21 12 23.6 12.8"/><circle cx="37.1" cy="13.2" r="0.9" fill="currentColor" stroke="none"/></symbol>
+  <symbol id="b-rocket" viewBox="0 0 44 26" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10.6 16.6L29 16.6C35 16.6 40.4 18 40.4 19.9C40.4 21.8 35 23.2 29 23.2L10.6 23.2Z"/><path d="M32.6 19.9C32.6 19 31.8 18.3 30.9 18.3C30 18.3 29.2 19 29.2 19.9C29.2 20.8 30 21.5 30.9 21.5C31.8 21.5 32.6 20.8 32.6 19.9Z"/><path d="M13.6 16.6L10.8 13.4L8.8 13.4L9.8 16.6M13.6 23.2L10.8 25.2L8.8 25.2L9.8 23.2"/><path d="M8.4 18.2L4.6 18.4L6.4 19.9L2.2 20.6L8.4 21.6"/><path d="M28.64 5.73L31.13 7.71L28.16 8.41C29 11.4 27.8 16 23.6 16.6C21.8 16.7 20.4 16.6 19.4 16.2L15 14.2L18.8 12.6C19.6 9.4 20.8 6.8 23.55 5.07C24.85 2.79 28.19 3.21 28.64 5.73Z"/><path d="M26.04 3.4C25.11 2.26 23.76 1.62 22.17 1.42M27.24 3.53C26.46 1.93 25.03 0.87 23.18 0.3"/><path d="M20 10.8C22.8 10.6 25 12.4 25.2 15.2C22.4 15.2 20.4 13.4 20 10.8Z"/><circle cx="26.76" cy="6.21" r="0.9" fill="currentColor" stroke="none"/></symbol>
+</svg>
+
+<header class="topbar mast">
+  <div class="topbar-inner">
+    <h1><img class="brand-ico" src="../../icons/preen.svg" alt="">Preen settings</h1>
+    <span id="version" class="pill ver"></span>
+    <div class="mast-chips">
+      <a id="connChip" class="pchip warn" href="#s-provider"><svg class="ico" aria-hidden="true"><use href="#i-warn"/></svg><strong>Not tested</strong></a>
+      <a id="autoChip" class="pchip warn" href="#s-automatic"><svg class="ico" aria-hidden="true"><use href="#i-pause"/></svg><strong>Automatic off</strong></a>
+    </div>
+    <button type="button" id="openActivity" class="btn ghost icon" title="Activity log"><svg class="ico" aria-hidden="true"><use href="#i-list"/></svg><span class="btn-label">Activity log</span></button>
+    <span id="dirty" class="badge-unsaved" hidden><svg class="ico" aria-hidden="true"><use href="#i-dot"/></svg><span id="dirtyLabel">Unsaved changes</span></span>
+    <button type="submit" form="settings" id="save" class="btn save" title="Save (Ctrl+S)"><svg class="ico" aria-hidden="true"><use href="#i-save"/></svg><span id="saveLabel">Save</span><span id="draftDot" class="draft-dot" hidden></span></button>
+  </div>
+  <p id="status" class="status-msg" role="status" hidden></p>
+</header>
+
+<nav class="side rail" aria-label="Settings sections">
+  <div class="find" id="findWrap">
+    <button type="button" class="btn icon find-btn" id="findBtn" aria-label="Find a setting (Ctrl+K)" title="Find a setting (Ctrl+K)"><svg class="ico" aria-hidden="true"><use href="#i-search"/></svg></button>
+    <div class="find-field"><svg class="ico" aria-hidden="true"><use href="#i-search"/></svg><input id="find" type="search" placeholder="Find a setting" aria-label="Find a setting" autocomplete="off" spellcheck="false"><kbd>Ctrl K</kbd></div>
+    <p id="findNote" class="help" role="status" hidden></p>
+  </div>
+  <ol>
+    <li><a href="#s-view"><span class="num">1</span><svg class="ico" aria-hidden="true"><use href="#i-feather"/></svg><span class="txt">View</span></a></li>
+    <li><a href="#s-provider"><span class="num">2</span><svg class="ico" aria-hidden="true"><use href="#i-plug"/></svg><span class="txt">Provider &amp; cost</span></a></li>
+    <li><a href="#s-setup"><span class="num">3</span><svg class="ico" aria-hidden="true"><use href="#i-todo"/></svg><span class="txt">Getting started</span></a></li>
+    <li><a href="#s-automatic"><span class="num">4</span><svg class="ico" aria-hidden="true"><use href="#i-clock"/></svg><span class="txt">Automatic processing</span></a></li>
+    <li data-min="2"><a href="#s-limits"><span class="num">5</span><svg class="ico" aria-hidden="true"><use href="#i-gauge"/></svg><span class="txt">Limits &amp; allowance</span></a></li>
+    <li data-min="3"><a href="#s-accounts"><span class="num">6</span><svg class="ico" aria-hidden="true"><use href="#i-inbox"/></svg><span class="txt">Accounts</span></a></li>
+    <li data-min="3"><a href="#s-people"><span class="num">7</span><svg class="ico" aria-hidden="true"><use href="#i-person"/></svg><span class="txt">People, replies &amp; to-dos</span></a></li>
+    <li data-min="3"><a href="#s-junk"><span class="num">8</span><svg class="ico" aria-hidden="true"><use href="#i-shield"/></svg><span class="txt">Junk &amp; sensitive info</span></a></li>
+    <li data-min="2"><a href="#s-categories"><span class="num">9</span><svg class="ico" aria-hidden="true"><use href="#i-tag"/></svg><span class="txt">Categories</span></a></li>
+    <li data-min="3"><a href="#s-privacy"><span class="num">10</span><svg class="ico" aria-hidden="true"><use href="#i-lock"/></svg><span class="txt">Privacy &amp; data</span></a></li>
+    <li data-min="3"><a href="#s-corrections"><span class="num">11</span><svg class="ico" aria-hidden="true"><use href="#i-pen"/></svg><span class="txt">Tag corrections</span></a></li>
+    <li data-min="3"><a href="#s-stats"><span class="num">12</span><svg class="ico" aria-hidden="true"><use href="#i-chart"/></svg><span class="txt">Statistics</span></a></li>
+    <li data-min="3"><a href="#s-backup"><span class="num">13</span><svg class="ico" aria-hidden="true"><use href="#i-save"/></svg><span class="txt">Backup</span></a></li>
+    <li data-min="3"><a href="#s-debug"><span class="num">14</span><svg class="ico" aria-hidden="true"><use href="#i-info"/></svg><span class="txt">Debug</span></a></li>
+    <li data-min="3"><a href="#s-advanced"><span class="num">15</span><svg class="ico" aria-hidden="true"><use href="#i-sliders"/></svg><span class="txt">Advanced</span></a></li>
+    <li class="nav-sep"><a id="navActivity" href="../activity/activity.html"><span class="num"></span><svg class="ico" aria-hidden="true"><use href="#i-list"/></svg><span class="txt">Activity</span></a></li>
+  </ol>
+</nav>
+
+<form id="settings" autocomplete="off">
+  <main id="main" tabindex="-1">
+    <p id="debugBanner" class="note warn" role="status" hidden><svg class="ico" aria-hidden="true"><use href="#i-warn"/></svg><span><b>Debug mode is on:</b> each request and answer, including full message text, is being stored on this computer. Turn it off in <a href="#s-debug">Debug</a>.</span></p>
+    <p class="intro">Right-click messages → <b>Classify with Preen</b> to sort them, or <b>Preview with Preen</b> to see what would happen without changing anything.</p>
+
+    <div class="card choose" id="modeChooser" role="group" aria-labelledby="h-choose" hidden>
+      <div class="card-head"><h2 id="h-choose" tabindex="-1">How much do you want to set up?</h2><span class="pill head-meta">Change any time</span><button type="button" class="btn ghost" id="chooseLater">Not now</button></div>
+      <div class="body choose-tiles">
+        <button type="button" class="tile" data-pick="simple" aria-pressed="false"><span class="fs" aria-hidden="true"></span><b>Simple</b><span class="d">Just the essentials: your provider, your key and a cost limit. Preen handles the rest.</span></button>
+        <button type="button" class="tile" data-pick="standard" aria-pressed="false"><span class="fs" aria-hidden="true"></span><b>Standard</b><span class="d">The settings most people use, including schedule, limits and categories.</span></button>
+        <button type="button" class="tile" data-pick="everything" aria-pressed="false"><span class="fs" aria-hidden="true"></span><b>Everything</b><span class="d">Every setting, including advanced and debug.</span></button>
+      </div>
+    </div>
+
+    <!-- View -->
+    <section class="card" id="s-view" aria-labelledby="h-view">
+      <div class="card-head"><button type="button" class="sec-help" data-help="s-view" aria-label="About View" title="About this section"><svg class="ico" aria-hidden="true"><use href="#i-feather"/></svg></button><h2 id="h-view" tabindex="-1">View</h2></div>
+      <div class="body">
+        <div class="field"><span class="label" id="viewLabel">Settings shown</span>
+          <span class="seg3" id="modeSeg" role="radiogroup" aria-labelledby="viewLabel">
+            <button type="button" role="radio" data-mode="simple" aria-checked="false" title="Just the essentials"><span class="fs" aria-hidden="true"></span>Simple</button>
+            <button type="button" role="radio" data-mode="standard" aria-checked="true" title="The settings most people use"><span class="fs" aria-hidden="true"></span>Standard</button>
+            <button type="button" role="radio" data-mode="everything" aria-checked="false" title="Every setting, including advanced and debug"><span class="fs" aria-hidden="true"></span>Everything</button>
+          </span>
+          <p class="help">Choose how much of Preen's settings to show. Simple has the essentials, Standard what most people use, and Everything every setting, including advanced and debug.</p></div>
+      </div>
+    </section>
+
+    <!-- Provider & cost -->
+    <section class="card" id="s-provider" aria-labelledby="h-provider">
+      <div class="card-head"><button type="button" class="sec-help" data-help="s-provider" aria-label="About Provider &amp; cost" title="About this section"><svg class="ico" aria-hidden="true"><use href="#i-plug"/></svg></button><h2 id="h-provider" tabindex="-1">Provider &amp; cost</h2></div>
+      <div class="body">
+        <div class="grid g2">
+          <div class="field"><label for="provider">Provider</label>
+            <select id="provider"></select></div>
+          <div class="field"><label for="model">Model <span class="opt">optional</span></label>
+            <input id="model" type="text" spellcheck="false">
+            <p class="help" id="modelHelp"></p></div>
+        </div>
+        <div class="field"><label for="apiKey">API key</label>
+          <div class="inline"><input id="apiKey" type="password" spellcheck="false"><button type="button" class="btn" id="test">Test connection</button></div>
+          <p class="help" id="testNote">Test connection sends no mail. It only checks that your key and provider work.</p>
+          <p class="note plain"><svg class="ico" aria-hidden="true"><use href="#i-lock"/></svg>Stored unencrypted in this Thunderbird profile. Use a key made just for Preen, with a credit limit.</p>
+        </div>
+        <p id="testStatus" class="note" role="status" hidden></p>
+        <div id="consentPanel" class="field">
+          <p class="note warn"><svg class="ico" aria-hidden="true"><use href="#i-lock"/></svg><span><span id="consentText"></span> <a id="consentPrivacy">Privacy policy</a></span></p>
+          <div class="field" data-min="2" style="max-width:520px"><label for="consentDepth" data-tip="depth">How much of each message to send</label>
+            <div class="inline"><select id="consentDepth"></select><span class="save-mark" id="depthMark" hidden></span></div>
+            <p class="help" id="consentDepthHelp"></p></div>
+          <details id="consentDetails" class="consent-details">
+            <summary>Everything that is sent, and why</summary>
+            <ul id="consentFields"></ul>
+          </details>
+          <div class="inline">
+            <button type="button" class="btn" id="consentAgree">I agree, allow sending</button>
+            <button type="button" class="btn ghost" id="consentNotNow">Not now</button>
+            <button type="button" class="btn danger" id="consentWithdraw" hidden>Withdraw consent</button>
+            <span class="save-mark" id="consentMark" hidden></span>
+          </div>
+          <p id="consentState" class="help" role="status"></p>
+        </div>
+        <div class="grid g2">
+          <div class="field"><label for="price">Price per million input tokens <span class="opt">USD</span></label>
+            <input id="price" type="number" min="0" step="any" placeholder="Leave empty to show tokens only">
+            <p class="help">Filled in by Test connection when your provider reports cost. <span id="priceSource"></span></p></div>
+          <div class="field" id="monthlyCostField"><label for="monthlyCost" data-tip="monthlyCost">Estimated monthly cost limit <span class="opt">USD · optional</span></label>
+            <input id="monthlyCost" type="number" min="0" step="any" placeholder="No limit">
+            <p class="help">Estimated from the tokens Preen counts this month × your price per million input tokens.</p>
+            <p class="lock-reason" id="monthlyCostLock" hidden><svg class="ico" aria-hidden="true"><use href="#i-lock"/></svg>A monthly limit needs a price. Type one above, or click Test connection: when your provider reports cost, Preen fills it in.</p>
+            <p class="help" id="costSuggest" hidden><span id="costSuggestText"></span> <button type="button" class="btn" id="costUse"></button></p></div>
+        </div>
+        <p id="costExamples" class="note info" hidden></p>
+        <p class="note info"><svg class="ico" aria-hidden="true"><use href="#i-info"/></svg><span>Preen counts tokens; no price is built in. Also set a credit limit on your API key at your provider, as a hard stop outside Preen.</span></p>
+      </div>
+    </section>
+
+    <!-- Getting started -->
+    <section class="card" id="s-setup" aria-labelledby="h-setup">
+      <div class="card-head"><button type="button" class="sec-help" data-help="s-setup" aria-label="About Getting started" title="About this section"><svg class="ico" aria-hidden="true"><use href="#i-todo"/></svg></button><h2 id="h-setup" tabindex="-1">Getting started</h2><span id="setupCount" class="pill accent head-meta"></span></div>
+      <button type="button" class="setup-done" id="setupDone" aria-expanded="false" aria-controls="setupBody"><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg><strong id="setupDoneTitle">Setup complete</strong><span class="help" id="setupDoneSub"></span><span class="sd-more" id="setupDoneMore">Show steps</span></button>
+      <div class="body" id="setupBody">
+        <div class="setup-grid"><div class="setup-main">
+        <ol class="steps" id="setupSteps"></ol>
+        <div class="setup-trial">
+        <div class="trialrow">
+          <button type="button" class="btn" id="trial">Try it on the last 7 days</button>
+          <span class="help">A preview of recent mail in the ticked mailboxes: Preen shows what it would do and changes nothing. You can then apply what looks right.</span>
+          <span class="help" id="trialNote" role="status"></span>
+        </div>
+        <img class="setup-photo" src="../assets/setup-macaws.webp" alt="" width="210" height="140">
+        </div>
+        </div>
+        <aside class="setup-side" aria-label="How to preview">
+          <div class="pv-demo">
+            <div class="pv-cap"><span>Step 3 · Preview</span></div>
+            <div class="pv-stage" aria-hidden="true">
+              <div class="pv-row"><i></i><span>Your order has shipped</span><span>9:41</span></div>
+              <div class="pv-row pv-sel"><i></i><span>Invoice 2210 from Marlow &amp; Co</span><span>9:12</span></div>
+              <div class="pv-row"><i></i><span>Lunch Thursday?</span><span>8:50</span></div>
+              <div class="pv-row"><i></i><span>Weekly digest</span><span>8:05</span></div>
+              <div class="pv-menu"><div>Reply</div><div>Forward</div><div class="pv-hit">Preview with Preen</div><div>Classify with Preen</div></div>
+              <div class="pv-cursor"></div>
+              <div class="pv-result"><b>Would tag:</b> Bills · Needs reply. Nothing changed (preview).</div>
+            </div>
+          </div>
+          <p class="help">Right-click a message, choose Preview with Preen, and read what it would do in the Activity log.</p>
+        </aside></div>
+      </div>
+    </section>
+
+    <!-- Automatic processing -->
+    <section class="card" id="s-automatic" aria-labelledby="h-automatic">
+      <div class="card-head"><button type="button" class="sec-help" data-help="s-automatic" aria-label="About Automatic processing" title="About this section"><svg class="ico" aria-hidden="true"><use href="#i-clock"/></svg></button><h2 id="h-automatic" tabindex="-1">Automatic processing</h2></div>
+      <div class="body">
+        <div class="field"><span class="label" id="accountsIncludedLabel">Process new mail automatically in:</span>
+          <div id="accountsIncluded" class="acct-included" role="group" aria-labelledby="accountsIncludedLabel"></div>
+          <p class="help">Tick none to keep it off. Right-click “Classify with Preen” works in any folder either way. Which folders and how much of each message: Accounts.</p></div>
+        <div class="auto-more" data-min="2">
+        <div class="auto-now" id="autoNow" role="status">
+          <svg class="ico" aria-hidden="true"><use href="#i-info"/></svg><span id="autoSentence"></span>
+          <button type="button" class="btn" id="autoResume" hidden>Resume</button>
+        </div>
+        <div class="auto-summary" id="autoSummary" role="group" aria-label="What automatic processing uses">
+          <div class="auto-sum-head"><span class="pill state-pill off" id="autoPill">Off</span><span id="autoMailboxes"></span></div>
+          <dl class="defs auto-uses" id="autoUses"></dl>
+          <p class="help" id="autoDimNote"></p>
+        </div>
+        <p class="lock-reason" id="autoLock" hidden><svg class="ico" aria-hidden="true"><use href="#i-lock"/></svg>Tick a mailbox above to change these</p>
+        <div class="lock-group" id="autoFields">
+        <div class="grid g3">
+          <div class="field"><label for="trigger">When</label>
+            <select id="trigger">
+              <option value="realtime">As new mail arrives</option>
+              <option value="scheduled">On a schedule</option>
+              <option value="manual">Only when I click “Run now”</option>
+            </select></div>
+          <div class="field" id="intervalField"><label for="intervalValue">Every</label>
+            <div class="inline"><input id="intervalValue" type="number" min="1" step="1" style="width:80px; flex:none">
+              <select id="intervalUnit" style="flex:1" aria-label="Unit"><option value="minutes">minutes</option><option value="hours">hours</option></select></div>
+            <p class="help" id="intervalHelp">From 5 minutes to 24 hours.</p></div>
+          <div class="field"></div>
+          <div class="field"><label for="maxAgeDays">Only mail from the last <span class="opt">days</span></label><input id="maxAgeDays" type="number" min="1" max="365"></div>
+        </div>
+        <label class="check"><input id="unreadOnly" type="checkbox"><span class="t">Only unread mail</span></label>
+        </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Limits & allowance -->
+    <section class="card" data-min="2" id="s-limits" aria-labelledby="h-limits">
+      <div class="card-head"><button type="button" class="sec-help" data-help="s-limits" aria-label="About Limits &amp; allowance" title="About this section"><svg class="ico" aria-hidden="true"><use href="#i-gauge"/></svg></button><h2 id="h-limits" tabindex="-1">Limits &amp; allowance</h2><p>How much Preen may send, and how fast it works. The limits apply to every request: automatic runs, right-click, folders and the toolbar button. 0 means no limit.</p></div>
+      <div class="body">
+        <div id="allowancePicker"></div>
+        <div id="allowanceDetails" class="grid g2">
+          <div class="field"><label for="dailyMessages">Messages per day</label><input id="dailyMessages" aria-describedby="pct-dailyMessages" type="number" min="0" step="10">
+            <p class="help pct" id="pct-dailyMessages" data-pct-for="dailyMessages"></p></div>
+        </div>
+        <p class="help">Limits are checked before each message; requests already in progress may finish after a limit is reached.</p>
+        <div class="field" id="speedField">
+          <span class="label" data-tip="speed">Speed</span>
+          <div class="seg with-icons" id="speedButtons" role="group" aria-label="Speed">
+            <button type="button" data-speed="low"><svg class="ico bird" aria-hidden="true"><use href="#b-perch"/></svg>Low</button>
+            <button type="button" data-speed="medium"><svg class="ico bird" aria-hidden="true"><use href="#b-glide"/></svg>Medium</button>
+            <button type="button" data-speed="high"><svg class="ico bird" aria-hidden="true"><use href="#b-fast"/></svg>High</button>
+            <button type="button" data-speed="off"><svg class="ico bird" aria-hidden="true"><use href="#b-rocket"/></svg>No limit</button>
+          </div>
+          <p class="help" id="speedHelp"></p>
+          <p class="note warn" id="speedWarning" hidden>No speed limit: Preen works as fast as it can, three messages at a time. Not recommended for large folders or slower computers.</p>
+          <p class="help">For large folders, Medium or Low is recommended: runs take longer but the computer stays responsive.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Accounts -->
+    <section class="card" data-min="3" id="s-accounts" aria-labelledby="h-accounts">
+      <div class="card-head"><button type="button" class="sec-help" data-help="s-accounts" aria-label="About Accounts" title="About this section"><svg class="ico" aria-hidden="true"><use href="#i-inbox"/></svg></button><h2 id="h-accounts" tabindex="-1">Accounts</h2><p>For each account: which folders Preen processes automatically, and how much of each message it sends.</p></div>
+      <div class="body">
+        <p class="note plain"><svg class="ico" aria-hidden="true"><use href="#i-lock"/></svg>Special folders (Trash, Junk, Sent, Drafts, Outbox, Templates, Archives) are never processed automatically.</p>
+        <div class="field" style="max-width:520px"><label for="depthDefault" data-tip="depth">Default depth</label>
+          <select id="depthDefault"></select>
+          <p class="help">Used by accounts set to “Use default”.</p>
+          <dl class="defs" id="depthDefs"></dl>
+          <p class="note info" id="depthPrivacy"><svg class="ico" aria-hidden="true"><use href="#i-info"/></svg><span>With Deep (the default), about 2,000 characters of each message’s text are sent to your provider. Choose Surface to send no message text at all.</span></p></div>
+        <div id="accounts" class="acct-list"></div>
+      </div>
+    </section>
+
+    <!-- People, replies & to-dos -->
+    <section class="card" data-min="3" id="s-people" aria-labelledby="h-people">
+      <div class="card-head"><button type="button" class="sec-help" data-help="s-people" aria-label="About People, replies &amp; to-dos" title="About this section"><svg class="ico" aria-hidden="true"><use href="#i-person"/></svg></button><h2 id="h-people" tabindex="-1">People, replies &amp; to-dos</h2></div>
+      <div class="body">
+        <div class="trio">
+          <div class="sub">
+            <h4><svg class="ico" aria-hidden="true"><use href="#i-person"/></svg>Real person</h4>
+            <label class="toggle-row"><span class="switch"><input id="qPerson" type="checkbox"><span></span></span>
+              <span><span class="t">Tag emails from a real person</span><span class="help">One person writing to other people — not generated, mail merge, newsletters or notifications.</span></span></label>
+            <div class="field">
+              <div id="realPersonPicker"></div>
+              <div id="realPersonDetails"><div class="field"><label for="tRealPerson">Certainty required (0–1)</label><input id="tRealPerson" type="number" min="0" max="1" step="0.05"></div></div>
+              <p class="help">Higher: fewer, safer tags.</p></div>
+          </div>
+          <div class="sub">
+            <h4><svg class="ico" aria-hidden="true"><use href="#i-reply"/></svg>Needs reply</h4>
+            <label class="toggle-row"><span class="switch"><input id="qNeedsReply" type="checkbox"><span></span></span>
+              <span><span class="t">Tag emails where someone is waiting for my reply</span></span></label>
+            <div class="field">
+              <div id="needsReplyPicker"></div>
+              <div id="needsReplyDetails"><div class="field"><label for="tNeedsReply">Certainty required (0–1)</label><input id="tNeedsReply" type="number" min="0" max="1" step="0.05"></div></div>
+              <p class="help">Higher: fewer, safer tags.</p></div>
+            <label class="check"><input id="flagNeedsReply" type="checkbox"><span class="t"><svg class="ico" aria-hidden="true"><use href="#i-flag"/></svg> Also flag them</span></label>
+          </div>
+          <div class="sub">
+            <h4><svg class="ico" aria-hidden="true"><use href="#i-todo"/></svg>To-do</h4>
+            <label class="toggle-row"><span class="switch"><input id="qToDo" type="checkbox"><span></span></span>
+              <span><span class="t">Spot emails that give me something to do</span><span class="help">Other than replying: pay, sign, book, send something, attend. Preen notes them in the activity log. It adds no tag.</span></span></label>
+            <div class="field">
+              <div id="toDoPicker"></div>
+              <div id="toDoDetails"><div class="field"><label for="tToDo">Certainty required (0–1)</label><input id="tToDo" type="number" min="0" max="1" step="0.05"></div></div>
+              <p class="help">Higher: fewer, safer to-dos.</p></div>
+            <label class="check"><input id="flagToDo" type="checkbox"><span><span class="t"><svg class="ico" aria-hidden="true"><use href="#i-flag"/></svg> Also flag them</span><span class="help">Flags sync to iCloud, Apple Mail and Gmail (as stars). In Thunderbird, Message → Convert to → Task makes one a task.</span></span></label>
+          </div>
+        </div>
+        <div class="field"><span class="label" data-tip="senderRules">Sender rules <span class="opt">— real person</span></span>
+          <p class="help">Right-click a message → “Preen: this sender is…” to always (or never) treat a sender as a real person. Rules win over everything else and save a question. Removing a rule takes effect immediately.</p>
+          <div id="senderRules"></div></div>
+      </div>
+    </section>
+
+    <!-- Junk & sensitive info -->
+    <section class="card" data-min="3" id="s-junk" aria-labelledby="h-junk">
+      <div class="card-head"><button type="button" class="sec-help" data-help="s-junk" aria-label="About Junk &amp; sensitive info" title="About this section"><svg class="ico" aria-hidden="true"><use href="#i-shield"/></svg></button><h2 id="h-junk" tabindex="-1">Junk &amp; sensitive info</h2><p>Both are off by default.</p></div>
+      <div class="body">
+        <div class="sub">
+          <h4 data-tip="junk"><svg class="ico" aria-hidden="true"><use href="#i-shield"/></svg>Junk</h4>
+          <label class="toggle-row"><span class="switch"><input id="qJunk" type="checkbox"><span></span></span>
+            <span><span class="t">Mark spam, scams and phishing as junk</span><span class="help">Adds the Preen/Junk tag and Thunderbird’s own Junk mark, which mail servers share as the standard junk flag. Preen never deletes mail and moves it only if you tick “Also move it to the Junk folder” below. It never clears a junk mark. Jev is told whether the sender is in your address book. Junk mail gets no Needs reply tag and is never flagged as a to-do.</span></span></label>
+          <div class="field">
+            <div id="junkPicker"></div>
+            <div id="junkDetails"><div class="field"><label for="tJunk">Certainty required (0–1)</label><input id="tJunk" type="number" min="0" max="1" step="0.05"></div></div>
+            <p class="help">Higher: fewer, safer marks. Marking real mail as junk is the costly mistake, so the default is high.</p></div>
+          <label class="check"><input id="moveJunk" type="checkbox"><span><span class="t">Also move it to the Junk folder</span><span class="help">Off by default. Only mail Preen marks as junk, never in dry run. Undo moves it back. Thunderbird asks you to allow moving mail when you tick this.</span></span></label>
+          <p class="lock-reason" id="moveJunkNeedsPermission" hidden><svg class="ico" aria-hidden="true"><use href="#i-lock"/></svg>Thunderbird hasn’t allowed Preen to move mail yet, so junk stays where it is. <button type="button" class="btn" id="allowMove">Allow moving mail</button></p>
+        </div>
+        <div class="sub">
+          <h4 data-tip="sensitive">Sensitive info</h4>
+          <label class="toggle-row"><span class="switch"><input id="sensitive" type="checkbox"><span></span></span>
+            <span><span class="t">Note mail that contains personal numbers</span><span class="help">Notes “Sensitive” in the activity log when a message shows a payment card, bank account (IBAN), US Social Security, passport or driver’s licence number, or a date of birth. Checked on this computer only, with no extra cost. It adds no tag and changes nothing on the message. Details without a number, such as a diagnosis, aren’t detected.</span></span></label>
+          <label class="check"><input id="replacePii" type="checkbox"><span><span class="t">Replace these numbers before sending</span><span class="help">On by default. In the subject and message text sent to the AI, each number found this way is replaced with &lt;PII_Block&gt;. Works whether or not the check above is on.</span></span></label>
+        </div>
+      </div>
+    </section>
+
+    <!-- Categories -->
+    <section class="card" data-min="2" id="s-categories" aria-labelledby="h-categories">
+      <div class="card-head"><button type="button" class="sec-help" data-help="s-categories" aria-label="About Categories" title="About this section"><svg class="ico" aria-hidden="true"><use href="#i-tag"/></svg></button><h2 id="h-categories" tabindex="-1">Categories</h2><label class="cat-switch" title="Turn off to use Preen without categories, for example only to catch junk."><span class="t" hidden>Use categories</span><strong id="categoriesOnLabel" data-tip="categoriesOn">On</strong><span class="switch"><input id="categoriesOn" type="checkbox" role="switch" aria-label="Use categories" checked><span></span></span></label><p id="categoriesIntro">Jev picks the category whose description fits best, so the descriptions matter more than the names. Use <b>Is</b> to say what belongs in a category, and <b>Is not</b> for similar mail that belongs somewhere else. <b>Certainty required</b> sets how sure Preen must be before tagging.</p></div>
+      <div class="body">
+        <p class="note info" id="categoriesOffNote" hidden><svg class="ico" aria-hidden="true"><use href="#i-info"/></svg><span><b>Categories are off.</b> Preen gives no category label and doesn't ask for one. The yes/no checks you turned on (real person, needs reply, to-do, junk) still run, so Preen can be used for junk alone.</span></p>
+        <div id="categoriesBody">
+        <p class="note info" id="categoriesHelp"><svg class="ico" aria-hidden="true"><use href="#i-info"/></svg><span>Categories pick one label per message; questions add yes/no tags. The questions are set under People, replies &amp; to-dos and Junk &amp; sensitive info.</span></p>
+        <p id="descriptionCost" class="note info" hidden></p>
+        <div id="categories"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Privacy & data -->
+    <section class="card" data-min="3" id="s-privacy" aria-labelledby="h-privacy">
+      <div class="card-head"><button type="button" class="sec-help" data-help="s-privacy" aria-label="About Privacy &amp; data" title="About this section"><svg class="ico" aria-hidden="true"><use href="#i-lock"/></svg></button><h2 id="h-privacy" tabindex="-1">Privacy &amp; data</h2></div>
+      <div class="body">
+        <div class="grid g2">
+          <div class="field"><label for="personalContext" data-tip="personalContext">Personal context about you <span class="opt">optional</span></label>
+            <textarea id="personalContext" rows="3" placeholder="e.g. I'm a freelance designer. My clients include …"></textarea>
+            <div class="inline" style="justify-content:space-between"><p class="help">Sent with every request. Uses the same character limit as categories.</p><span id="personalContextCounter" class="count"></span></div></div>
+          <div class="field"><label for="recipientLanguages" data-tip="recipientLanguages">Languages I read <span class="opt">optional</span></label>
+            <input id="recipientLanguages" type="text" spellcheck="false" placeholder="e.g. English, Spanish">
+            <div class="inline" style="justify-content:space-between"><p class="help" id="languagesHelp">Sent with every request. Empty: nothing is sent.</p><span id="recipientLanguagesCounter" class="count"></span></div></div>
+        </div>
+        <p class="note info" id="jevSees"><svg class="ico" aria-hidden="true"><use href="#i-info"/></svg><span><b>What Jev sees:</b> the sender, subject, date, number of recipients and attachment names; header hints (such as a list-unsubscribe header); the kind of mailbox and your note about it; your personal context; the languages you read; and the message text, depending on Depth. Your account name and address are never sent.</span></p>
+        <div class="grid g2">
+          <div class="field">
+            <p class="help">Deep sends about 2,000 characters of message text; Surface never sends any.</p></div>
+          <div class="field">
+            <div id="historyPicker"></div>
+            <div id="historyDetails" class="g2">
+              <div class="field"><label for="retentionDays">Days</label><input id="retentionDays" type="number" min="1" max="3650"></div>
+            </div>
+            <p class="help">Monthly token summaries are kept even after old entries are removed.</p></div>
+        </div>
+        <label class="check"><input id="markProcessedTag" type="checkbox"><span><span class="t">Tag processed messages so other computers skip them too</span><span class="help">Syncs through IMAP to other computers, except on Gmail: Gmail doesn’t keep tags, so on a Gmail account Preen’s tags (and this one) stay in this Thunderbird and don’t show in Gmail. A local record is always kept.</span></span></label>
+      </div>
+    </section>
+
+    <!-- Tag corrections -->
+    <section class="card" data-min="3" id="s-corrections" aria-labelledby="h-corrections">
+      <div class="card-head"><button type="button" class="sec-help" data-help="s-corrections" aria-label="About Tag corrections" title="About this section"><svg class="ico" aria-hidden="true"><use href="#i-pen"/></svg></button><h2 id="h-corrections" tabindex="-1">Tag corrections</h2></div>
+      <div class="body">
+        <p class="help">When you add or remove a Preen tag yourself, Preen notes the tag, the change and its own score, on this computer only (no sender, subject or text). They are kept 2 years, apart from the history, so Clear history doesn't remove them.</p>
+        <p class="help" id="correctionsCount"></p>
+        <div id="suggestions"></div>
+        <div class="inline" style="flex-wrap:wrap; gap:12px">
+          <button type="button" class="btn" id="exportCorrectionsCsv">Export corrections (CSV)</button>
+          <button type="button" class="btn" id="exportCorrectionsJson">Export corrections (JSON)</button>
+          <span class="grow"></span>
+          <button type="button" class="btn" id="clearCorrections">Clear corrections…</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Statistics -->
+    <section class="card" data-min="3" id="s-stats" aria-labelledby="h-stats">
+      <div class="card-head"><button type="button" class="sec-help" data-help="s-stats" aria-label="About Statistics" title="About this section"><svg class="ico" aria-hidden="true"><use href="#i-chart"/></svg></button><h2 id="h-stats" tabindex="-1">Statistics</h2></div>
+      <div class="body">
+        <div class="sub">
+          <h4><svg class="ico" aria-hidden="true"><use href="#i-list"/></svg>Your totals</h4>
+          <p class="help">Counted on this computer from the activity history. Only you see these.</p>
+          <div class="stats-wrap"><table class="stats" id="statsTotals"></table></div>
+          <p class="help" id="statsSince"></p>
+          <div class="inline"><button type="button" class="btn danger" id="statsReset">Reset my statistics</button></div>
+          <div class="stats-groups" id="statsDetail"></div>
+        </div>
+        <div class="sub">
+          <h4><svg class="ico" aria-hidden="true"><use href="#i-list"/></svg>Undo</h4>
+          <p class="help">Puts the messages from Preen's most recent applied run back how they were. Tags or changes you made yourself are left alone. Older runs can be undone from the Activity log.</p>
+          <div class="inline"><button type="button" class="btn" id="undoLast">Undo last run</button></div>
+          <p class="help" id="undoNote" role="status"></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Backup -->
+    <section class="card" data-min="3" id="s-backup" aria-labelledby="h-backup">
+      <div class="card-head"><button type="button" class="sec-help" data-help="s-backup" aria-label="About Backup" title="About this section"><svg class="ico" aria-hidden="true"><use href="#i-save"/></svg></button><h2 id="h-backup" tabindex="-1">Backup</h2></div>
+      <div class="body">
+        <p class="help">Save your settings to a file, or load them from one. Imported settings are shown here for review and only take effect when you click Save.</p>
+        <div class="inline" style="flex-wrap:wrap; gap:12px">
+          <button type="button" class="btn" id="exportSettings">Export settings…</button>
+          <label class="check" style="align-items:center"><input id="includeKey" type="checkbox">Include my API key</label>
+          <span class="help"><svg class="ico" style="color:var(--warn)" aria-hidden="true"><use href="#i-warn"/></svg> The file holds your key in plain text. Anyone with it can use your key.</span>
+          <span class="grow"></span>
+          <button type="button" class="btn" id="importSettings">Import settings…</button>
+          <input id="importFile" type="file" accept=".json,application/json" hidden>
+        </div>
+      </div>
+    </section>
+
+    <!-- Debug -->
+    <section class="card" data-min="3" id="s-debug" aria-labelledby="h-debug">
+      <div class="card-head"><button type="button" class="sec-help" data-help="s-debug" aria-label="About Debug" title="About this section"><svg class="ico" aria-hidden="true"><use href="#i-info"/></svg></button><h2 id="h-debug" tabindex="-1">Debug</h2></div>
+      <div class="body">
+        <label class="check"><input id="debugEnabled" type="checkbox"><span><span class="t">Keep a debug log</span><span class="help">Stores each request sent to Jev and its answer exactly, including full message text, with Preen's decision and your settings (never your API key). On this computer only, kept as long as the history, unless you choose messages to send below. Takes effect at once.</span></span></label>
+        <span class="save-mark" id="debugMark" hidden></span>
+        <div id="debugOffChoice" class="note warn" hidden><span>Debug mode is off. Keep the debug records already stored, or delete them?</span>
+          <button type="button" class="btn" id="debugKeep">Keep records</button>
+          <button type="button" class="btn" id="debugDelete">Delete records</button></div>
+        <p class="help" id="debugCount"></p>
+        <div class="inline" style="flex-wrap:wrap; gap:12px">
+          <button type="button" class="btn" id="exportDebug">Export debug log (JSON)</button>
+          <span class="grow"></span>
+          <button type="button" class="btn" id="clearDebug">Clear debug log</button>
+        </div>
+        <div class="sub" id="debugSubmit" hidden>
+          <h4>Send messages to the Preen developer</h4>
+          <p class="help">Only what you tick, only when you click Send. Each message goes with the request Preen sent to Jev, Jev's answer, Preen's decision and your correction. Never your API key, account or settings. Messages you corrected are listed first.</p>
+          <div id="debugList" class="debug-list"></div>
+          <div class="inline" style="flex-wrap:wrap; gap:12px">
+            <button type="button" class="btn" id="debugPreview">Preview</button>
+            <button type="button" class="btn primary" id="debugSend">Send…</button>
+            <span class="help" id="debugChosen"></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Advanced -->
+    <section class="card" data-min="3" id="s-advanced" aria-labelledby="h-advanced">
+      <div class="card-head"><button type="button" class="sec-help" data-help="s-advanced" aria-label="About Advanced" title="About this section"><svg class="ico" aria-hidden="true"><use href="#i-sliders"/></svg></button><h2 id="h-advanced" tabindex="-1">Advanced</h2></div>
+      <div class="body">
+        <div class="grid g3">
+          <div class="field"><label for="tCategory">Default certainty for categories <span class="opt">0–1</span></label><input id="tCategory" type="number" min="0" max="1" step="0.05"></div>
+        </div>
+        <div class="grid g3">
+          <div class="field"><label for="appearance">Appearance</label><select id="appearance"><option value="auto">Match Thunderbird</option><option value="light">Light</option><option value="dark">Dark</option></select></div>
+        </div>
+        <p class="help">Match Thunderbird follows Thunderbird's light or dark setting.</p>
+        <p class="help">Photo in Getting started: edmondlafoto via Pixabay.</p>
+        <p class="help">The default certainty applies to categories that don't set their own. A yes/no answer this close to its threshold is noted as unsure in the activity log.</p>
+        <label class="toggle-row"><span class="switch"><input id="dryRun" type="checkbox" role="switch"><span></span></span>
+          <span><span class="t">Dry run</span><span class="help">While on, “Classify with Preen” and automatic processing only log what they would do.</span></span></label>
+        <div class="confirm" id="dryConfirm" role="dialog" aria-labelledby="dryConfirmTitle" hidden>
+          <svg class="ico" aria-hidden="true"><use href="#i-warn"/></svg>
+          <span><strong id="dryConfirmTitle">Turn off dry run?</strong> Preen will start changing messages: adding tags, flags and unread marks as your settings say.</span>
+          <span class="spacer"></span>
+          <button type="button" class="btn" id="dryKeep">Keep dry run on</button>
+          <button type="button" class="btn primary" id="dryOff">Turn off</button>
+        </div>
+      </div>
+    </section>
+  </main>
+</form>
+
+<aside class="blotter" id="blotter" aria-label="Unsaved changes" hidden>
+  <div class="bl-hd"><div><div class="bl-t">Blotter</div><div class="help" id="blCount"></div></div>
+    <div class="acts"><button type="button" class="btn" id="discard">Discard</button><button type="submit" form="settings" class="btn primary" id="blSave"><svg class="ico" aria-hidden="true"><use href="#i-save"/></svg>Save</button></div></div>
+  <ul class="bl-list" id="blList"></ul>
+</aside>
+
+<dialog id="helpDialog" class="help-dialog" aria-labelledby="helpTitle">
+  <div class="help-box">
+    <h2 id="helpTitle"></h2>
+    <p id="helpText"></p>
+    <div class="acts"><button type="button" class="btn" id="helpClose">Close</button></div>
+  </div>
+</dialog>
+<dialog id="dataDialog" class="help-dialog data-dialog" aria-labelledby="dataTitle">
+  <div class="help-box">
+    <h2 id="dataTitle"></h2>
+    <p id="dataText"></p>
+    <pre id="dataJson" class="data-json" tabindex="0"></pre>
+    <div class="acts">
+      <button type="button" class="btn" id="dataSave" hidden>Save as file</button>
+      <button type="button" class="btn primary" id="dataSend" hidden>Send</button>
+      <button type="button" class="btn" id="dataClose">Close</button>
+    </div>
+  </div>
+</dialog>
+<script type="module" src="../shared/appearance.js"></script>
+<script type="module" src="options.js"></script>
+</body>
+</html>

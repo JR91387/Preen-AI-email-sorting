@@ -1,0 +1,111 @@
+<!doctype html>
+<!-- SPDX-License-Identifier: PolyForm-Shield-1.0.0 -->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="preen-version" content="0.0.29">
+  <script src="../shared/page-guard.js"></script>
+  <title>Preen activity</title>
+  <link rel="stylesheet" href="../shared/theme.css">
+  <link rel="stylesheet" href="activity.css">
+</head>
+<body class="activity">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-check" viewBox="0 0 16 16"><circle cx="8" cy="8" r="6.2"/><path d="M5.3 8.2l1.8 1.8 3.6-3.8"/></symbol>
+  <symbol id="i-pause" viewBox="0 0 16 16"><circle cx="8" cy="8" r="6.2"/><path d="M6.5 5.8v4.4M9.5 5.8v4.4"/></symbol>
+  <symbol id="i-warn" viewBox="0 0 16 16"><path d="M8 2l6.5 11.5h-13zM8 6.5v3M8 11.5h.01"/></symbol>
+</svg>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <h1><img class="brand-ico" src="../../icons/preen.svg" alt="">Preen activity</h1>
+    <button type="button" id="runNow" class="btn primary">Run now</button>
+    <button type="button" id="stop" class="btn danger" title="Stop the run in progress">Stop</button>
+    <button type="button" id="toggle" class="btn">Pause</button>
+    <button type="button" id="undoLast" class="btn">Undo last run</button>
+    <button type="button" id="exportCsv" class="btn">Export CSV</button>
+    <button type="button" id="exportJson" class="btn">Export JSON</button>
+    <button type="button" id="clear" class="btn">Clear history</button>
+    <button type="button" id="settings" class="btn">Settings</button>
+  </div>
+  <div class="strip">
+    <div class="strip-inner">
+      <span id="dryChip" class="pchip ok" hidden><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg><strong>Dry run on</strong></span>
+      <span id="autoChip" class="pchip warn"><svg class="ico" aria-hidden="true"><use href="#i-pause"/></svg><strong>Automatic processing off</strong></span>
+      <span id="runProgress" class="run-progress" role="status" hidden><span id="runProgressText"></span><progress id="runProgressBar" max="1" value="0"></progress></span>
+    </div>
+  </div>
+</header>
+
+<main>
+  <p class="lede">What Preen did, or would do, with each message. Previews and dry runs never change messages.
+    The history and its exports include each message's sender and subject, never its text, and stay on this computer.</p>
+
+  <p id="debugBanner" class="banner warn" role="status" hidden><span><b>Debug mode is on:</b> each request and answer, including full message text, is being stored on this computer. Turn it off in Settings → Debug.</span></p>
+  <p id="exportNote" class="banner ok" role="status" hidden></p>
+  <div id="skipBanner" class="banner warn" role="alert" hidden>
+    <span id="skipText"></span>
+    <button type="button" class="btn" id="skipSettings">Open Settings</button>
+    <button type="button" class="btn" id="skipDismiss">Dismiss</button>
+  </div>
+  <div id="correctedBanner" class="banner warn" role="status" hidden>
+    <span id="correctedText"></span>
+    <button type="button" class="btn" id="correctedAnyway">Classify anyway</button>
+    <button type="button" class="btn" id="correctedDismiss">Dismiss</button>
+  </div>
+
+  <section class="card status-card">
+    <div id="status"></div>
+  </section>
+
+  <section id="review" class="card review-card" hidden>
+    <h2 id="reviewTitle">Review this run</h2>
+    <p class="reason">Apply uses the decisions already made: nothing is sent to the provider again. Applied messages can be undone like any other run.</p>
+    <p id="reviewNote" class="reason" role="status"></p>
+    <div class="review-actions">
+      <button type="button" class="btn primary" id="reviewApplyAll">Apply all</button>
+      <button type="button" class="btn" id="reviewClose">Close</button>
+    </div>
+    <table class="review-table"><tbody id="reviewRows"></tbody></table>
+  </section>
+
+  <h2>This month</h2>
+  <div id="summary" class="summary"></div>
+
+  <div class="stats">
+    <section class="card chart-card">
+      <h3>By category this month</h3>
+      <div id="categoryChart" class="hbars"></div>
+    </section>
+    <section class="card chart-card">
+      <h3>Tokens by month</h3>
+      <div id="monthChart" class="columns"></div>
+      <details class="table-view">
+        <summary>Show as table</summary>
+        <table id="monthTable"></table>
+      </details>
+    </section>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Time</th>
+          <th>Message</th>
+          <th>Result</th>
+          <th>Scores</th>
+          <th>Header hints</th>
+          <th>Tokens</th>
+        </tr>
+      </thead>
+      <tbody id="rows"></tbody>
+    </table>
+  </div>
+  <div class="row"><button type="button" id="more" hidden>Show older entries</button></div>
+  <div id="empty" class="empty" hidden><img class="empty-art" src="../assets/empty-banner.webp" alt="Groom your inbox." width="640" height="200"><p><strong>Nothing sorted yet.</strong> Right-click a message and choose “Preview with Preen (no changes)” to see what Preen would do.</p></div>
+</main>
+<script type="module" src="../shared/appearance.js"></script>
+<script type="module" src="activity.js"></script>
+</body>
+</html>

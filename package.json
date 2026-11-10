@@ -1,0 +1,17 @@
+{
+  "name": "preen-thunderbird",
+  "version": "0.0.29",
+  "private": true,
+  "description": "Preen – AI mail sorting for mail apps. Development tooling only; each app lives in apps/<name>/, shared code in packages/shared/.",
+  "license": "PolyForm-Shield-1.0.0",
+  "type": "module",
+  "scripts": {
+    "test": "node --test \"tests/**/*.test.js\"",
+    "build:thunderbird": "sh scripts/build.sh thunderbird",
+    "package": "sh scripts/package.sh",
+    "dev": "bash scripts/dev.sh"
+  },
+  "devDependencies": {
+    "stylelint": "^17.16.0"
+  }
+}

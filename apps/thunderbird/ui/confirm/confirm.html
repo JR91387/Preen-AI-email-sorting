@@ -1,0 +1,26 @@
+<!doctype html>
+<!-- SPDX-License-Identifier: PolyForm-Shield-1.0.0 -->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="preen-version" content="0.0.29">
+  <script src="../shared/page-guard.js"></script>
+  <title>Preen: confirm</title>
+  <link rel="stylesheet" href="../shared/theme.css">
+  <link rel="stylesheet" href="confirm.css">
+</head>
+<body>
+  <main class="confirm">
+    <h1 id="title">Classify these messages?</h1>
+    <p id="summary"></p>
+    <p id="estimate" class="help"></p>
+    <p class="help">Your daily allowance still applies. Change it in Settings → Limits &amp; allowance.</p>
+    <div class="buttons">
+      <button type="button" id="cancel">Cancel</button>
+      <button type="button" id="ok" class="primary">Classify all</button>
+    </div>
+  </main>
+  <script type="module" src="../shared/appearance.js"></script>
+  <script type="module" src="confirm.js"></script>
+</body>
+</html>

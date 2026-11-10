@@ -1,0 +1,12 @@
+[
+  { "name": "app:thunderbird", "color": "0a84ff", "description": "Preen for Thunderbird (apps/thunderbird)" },
+  { "name": "app:betterbird", "color": "2e7d32", "description": "Preen on Betterbird (apps/betterbird)" },
+  { "name": "app:seamonkey", "color": "6d4c41", "description": "Preen for SeaMonkey Mail (apps/seamonkey)" },
+  { "name": "app:outlook", "color": "0f6cbd", "description": "Preen for Outlook (apps/outlook)" },
+  { "name": "app:kmail", "color": "1d99f3", "description": "Preen for KMail (apps/kmail)" },
+  { "name": "app:claws-mail", "color": "8e24aa", "description": "Preen for Claws Mail (apps/claws-mail)" },
+  { "name": "app:evolution", "color": "f57c00", "description": "Preen for GNOME Evolution (apps/evolution)" },
+  { "name": "app:gmail", "color": "d93025", "description": "Preen as a Gmail Google Workspace add-on (apps/gmail)" },
+  { "name": "app:apple-mail", "color": "8e8e93", "description": "Preen for Apple Mail on macOS (apps/apple-mail)" },
+  { "name": "shared", "color": "fbca04", "description": "Code shared by every app (packages/shared)" }
+]

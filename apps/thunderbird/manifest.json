@@ -1,0 +1,57 @@
+{
+  "manifest_version": 3,
+  "name": "Preen",
+  "description": "AI mail sorting for Thunderbird, using the Jev decision model with your own API key.",
+  "version": "0.0.29",
+  "author": "Jerry Reinitz",
+  "homepage_url": "https://jerryreinitz.com",
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "{0950d4fa-5bee-4307-8d9c-009fdeb0ad32}",
+      "strict_min_version": "140.0",
+      "data_collection_permissions": {
+        "required": ["personalCommunications", "personallyIdentifyingInfo"]
+      }
+    }
+  },
+  "icons": {
+    "32": "icons/preen.svg",
+    "64": "icons/preen.svg"
+  },
+  "action": {
+    "default_title": "Preen",
+    "default_label": "Preen",
+    "default_icon": "icons/preen.svg",
+    "default_popup": "ui/popup/popup.html"
+  },
+  "background": {
+    "scripts": [
+      "background/main.js"
+    ],
+    "type": "module"
+  },
+  "optional_permissions": ["messagesMove"],
+  "permissions": [
+    "messagesRead",
+    "sensitiveDataUpload",
+    "messagesUpdate",
+    "messagesTags",
+    "messagesTagsList",
+    "accountsRead",
+    "addressBooks",
+    "storage",
+    "menus",
+    "alarms"
+  ],
+  "host_permissions": [
+    "https://openrouter.ai/api/v1/systemone",
+    "https://api.typesafe.ai/v1/systemone"
+  ],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'"
+  },
+  "options_ui": {
+    "page": "ui/options/options.html",
+    "open_in_tab": true
+  }
+}

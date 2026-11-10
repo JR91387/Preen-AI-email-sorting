@@ -1,0 +1,5 @@
+/* SPDX-License-Identifier: PolyForm-Shield-1.0.0 */
+#policy { padding: 8px 24px 24px; }
+#policy h1 { margin-top: 16px; }
+#policy li { margin: 4px 0; }
+#policy code { font-family: ui-monospace, "Cascadia Mono", Menlo, monospace; font-size: 12.5px; }

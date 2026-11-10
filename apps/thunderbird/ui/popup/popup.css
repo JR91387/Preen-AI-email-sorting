@@ -1,0 +1,16 @@
+/* SPDX-License-Identifier: PolyForm-Shield-1.0.0 */
+body { padding: 3px 0 0; min-width: 300px; background: var(--brand-line) top / 100% 3px no-repeat, var(--bg); }
+.popup { padding: 12px 14px; display: grid; gap: 10px; }
+.head { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+.pill { font-size: 12px; padding: 1px 8px; border-radius: 999px; background: var(--surface-2); }
+.lines { display: grid; gap: 3px; font-size: 13px; }
+.lines .row { display: flex; justify-content: space-between; gap: 12px; margin: 0; }
+.lines .label { color: var(--muted); }
+.lines .warn { color: var(--warn); }
+.lines .err { color: var(--danger); }
+.buttons { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+.buttons button { padding: 6px 8px; }
+.wide { width: 100%; padding: 6px 8px; }
+#message, #estimate { margin: 0; min-height: 1em; }
+.links { display: flex; gap: 14px; font-size: 13px; border-top: 1px solid var(--border); padding-top: 8px; }
+.links a { color: var(--link); text-decoration: none; }

@@ -1,0 +1,6 @@
+/* SPDX-License-Identifier: PolyForm-Shield-1.0.0 */
+body { margin: 0; background: var(--bg); color: var(--text); font: 14px/1.45 system-ui, sans-serif; }
+.confirm { padding: 18px 20px; }
+.confirm h1 { margin: 0 0 8px; font-size: 16px; }
+.confirm .help { color: var(--muted); font-size: 13px; }
+.confirm .buttons { display: flex; justify-content: flex-end; gap: 8px; margin-top: 16px; }

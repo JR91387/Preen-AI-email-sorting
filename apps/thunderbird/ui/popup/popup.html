@@ -1,0 +1,43 @@
+<!doctype html>
+<!-- SPDX-License-Identifier: PolyForm-Shield-1.0.0 -->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="preen-version" content="0.0.29">
+  <script src="../shared/page-guard.js"></script>
+  <title>Preen</title>
+  <link rel="stylesheet" href="../shared/theme.css">
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="popup">
+    <div class="head">
+      <strong><img class="brand-ico sm" src="../../icons/preen.svg" alt="">Preen</strong>
+      <span id="state" class="pill"></span>
+    </div>
+    <div id="lines" class="lines"></div>
+
+    <div class="buttons">
+      <button type="button" id="runNow" class="primary">Run now</button>
+      <button type="button" id="toggle">Pause</button>
+    </div>
+    <div class="buttons">
+      <button type="button" id="classify">Classify selected</button>
+      <button type="button" id="preview">Preview selected</button>
+    </div>
+    <button type="button" id="trial" class="wide">Try it on the last 7 days</button>
+    <p id="estimate" class="hint" hidden></p>
+    <p id="message" class="hint" role="status"></p>
+    <p id="corrected" class="hint" hidden><span id="correctedText"></span>
+      <button type="button" id="correctedAnyway">Classify anyway</button></p>
+
+    <div class="links">
+      <a href="#" id="undoLast">Undo last run</a>
+      <a href="#" id="activity">Activity log</a>
+      <a href="#" id="settings">Settings</a>
+    </div>
+  </div>
+  <script type="module" src="../shared/appearance.js"></script>
+  <script type="module" src="popup.js"></script>
+</body>
+</html>

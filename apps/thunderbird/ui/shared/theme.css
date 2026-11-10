@@ -1,0 +1,240 @@
+/* SPDX-License-Identifier: PolyForm-Shield-1.0.0 */
+/*
+ * Preen's palette (from the settings master mock-up): cards on a clearly darker
+ * page, rounder corners, and green / red / amber status colours measured at 4.5:1
+ * or more on their backgrounds. Every colour has a light and a dark value through
+ * light-dark(), so pages follow the colour scheme Thunderbird gives them, or the
+ * Appearance setting when it forces one (appearance.js sets color-scheme).
+ */
+:root {
+  --brand-line: linear-gradient(90deg, #1f7fa8, #3aa65a, #e2672a);
+  /* Soft wash of the brand colours behind the settings page (the alpha is the strength). */
+  --wash-1: light-dark(rgb(31 127 168 / 16%), rgb(31 127 168 / 22%));
+  --wash-2: light-dark(rgb(58 166 90 / 16%), rgb(58 166 90 / 22%));
+  --wash-3: light-dark(rgb(226 103 42 / 16%), rgb(226 103 42 / 22%));
+  color-scheme: light dark;
+
+  --sys-accent: light-dark(#1f5c99, #7da7cc);
+  --sys-accent-text: light-dark(#fff, #1a1d22);
+
+  /* Surfaces: page (darker) → card → band (card headers, insets). */
+  --surface: light-dark(#fff, #22262c);
+  --bg: light-dark(#e9e5dc, #121418);
+  --surface-2: light-dark(#f5f2eb, #2a2f36);
+  --inset: light-dark(#f8f6f1, #262a31);
+  --band: light-dark(#f5f2eb, #2a2f36);
+  --field: var(--surface);
+  --field-text: var(--text);
+
+  --text: light-dark(#1c2027, #e9e7e2);
+  --muted: light-dark(#5e636b, #a3a8af);
+  --border: light-dark(#cec6b4, #434951);
+  --border-strong: light-dark(#858a93, #6b717b);
+
+  --accent: var(--sys-accent);
+  --on-accent: var(--sys-accent-text);
+  --link: var(--sys-accent);
+  --accent-soft: light-dark(#e3edf6, #2a3948);
+  --tint: color-mix(in srgb, var(--sys-accent) 8%, var(--surface));
+  --ring: color-mix(in srgb, var(--sys-accent) 30%, transparent);
+  --focus: light-dark(#1f5c99, #8ab8e0);
+
+  --ok: light-dark(#2a7455, #6fb58f);
+  --ok-soft: color-mix(in srgb, var(--ok) 12%, var(--surface));
+  --warn: light-dark(#8f5500, #e0a458);
+  --warn-soft: color-mix(in srgb, var(--warn) 12%, var(--surface));
+  --danger: light-dark(#b13e3b, #e07a75);
+  --danger-soft: color-mix(in srgb, var(--danger) 12%, var(--surface));
+
+  /* light-dark() takes colours only, so it picks each shadow's colour. */
+  --shadow: 0 1px 2px light-dark(rgb(40 30 10 / 8%), rgb(0 0 0 / 40%)), 0 2px 8px light-dark(rgb(40 30 10 / 5%), transparent);
+  --radius: 12px;
+  --control-h: 34px;
+}
+
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+
+body {
+  margin: 0;
+  padding: 24px 16px 48px;
+  background: var(--bg);
+  color: var(--text);
+  font: 14px/1.5 system-ui, -apple-system, "Segoe UI", Ubuntu, Cantarell, sans-serif;
+}
+
+a { color: var(--link); }
+:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+
+main { max-width: 960px; margin: 0 auto; }
+
+h1 { font-size: 22px; margin: 0 0 4px; }
+h2 { font-size: 16px; margin: 28px 0 8px; }
+h3 { font-size: 14px; margin: 18px 0 4px; }
+p.lede { color: var(--muted); margin: 0 0 16px; }
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px;
+}
+
+label { display: block; font-weight: 600; margin: 12px 0 4px; }
+.hint { color: var(--muted); font-size: 12.5px; font-weight: normal; }
+
+input[type="text"], input[type="password"], input[type="number"], select, textarea {
+  width: 100%;
+  padding: 7px 9px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--field);
+  color: var(--field-text);
+  font: inherit;
+}
+input:hover, select:hover, textarea:hover { border-color: var(--border-strong); }
+
+button {
+  padding: 7px 14px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: var(--surface-2);
+  color: var(--text);
+  font: inherit;
+  cursor: pointer;
+}
+button:hover { border-color: var(--border-strong); }
+button.primary { background: var(--accent); border-color: var(--accent); color: var(--on-accent); font-weight: 600; }
+button:disabled { opacity: 0.5; cursor: default; }
+
+/* Inactive fields look flat and muted, so they read as "can't change this now". */
+input:disabled, select:disabled, textarea:disabled,
+input:disabled:hover, select:disabled:hover, textarea:disabled:hover {
+  color: var(--muted);
+  background: var(--surface-2);
+  border-color: transparent;
+  cursor: not-allowed;
+  opacity: 1;
+}
+input[type="checkbox"]:disabled, input[type="radio"]:disabled { background: transparent; opacity: 0.55; }
+label:has(> input:disabled) { cursor: not-allowed; color: var(--muted); }
+
+.row { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; margin-top: 16px; }
+
+.status { margin-top: 12px; white-space: pre-wrap; }
+.status.ok { color: var(--ok); }
+.status.warn { color: var(--warn); }
+.status.error { color: var(--danger); }
+
+.chip {
+  display: inline-block;
+  padding: 1px 7px;
+  margin: 1px 2px 1px 0;
+  border-radius: 999px;
+  background: var(--surface-2);
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+table.accounts { width: 100%; border-collapse: collapse; margin-top: 8px; }
+table.accounts th, table.accounts td { text-align: left; padding: 6px 8px; border-bottom: 1px solid var(--border); }
+table.accounts th { color: var(--muted); font-weight: 600; font-size: 12.5px; }
+
+.ico { width: 16px; height: 16px; flex: none; fill: none; stroke: currentColor; stroke-width: 1.5;
+  stroke-linecap: round; stroke-linejoin: round; vertical-align: -3px; }
+
+/* Buttons with icons */
+.btn { height: var(--control-h); padding: 0 14px; display: inline-flex; align-items: center; gap: 6px; white-space: nowrap; }
+.btn.ghost { background: transparent; border-color: transparent; color: var(--muted); padding: 0 8px; }
+.btn.ghost:hover:not(:disabled) { color: var(--text); border-color: var(--border); }
+.btn.icon { width: var(--control-h); padding: 0; justify-content: center; }
+.btn.danger { color: var(--danger); border-color: color-mix(in srgb, var(--danger) 45%, var(--border)); }
+.btn.danger:hover:not(:disabled) { background: var(--danger-soft); }
+.btn.small { height: 28px; border-radius: 999px; font-size: 13px; }
+
+/* Top bar and status strip (settings and activity pages) */
+/* The thin line on top uses the icon's gradient. */
+.topbar { position: sticky; top: 0; z-index: 10; padding-top: 3px; background: var(--brand-line) top / 100% 3px no-repeat, var(--surface); border-bottom: 1px solid var(--border); }
+.topbar-inner { max-width: 1120px; margin: 0 auto; padding: 10px 24px; display: flex; align-items: center; gap: 12px; }
+.topbar h1 { font-size: 17px; margin: 0; font-weight: 600; flex: 1; white-space: nowrap; }
+.badge-unsaved { color: var(--warn); background: var(--warn-soft); border-radius: 999px; padding: 2px 10px;
+  font-size: 12px; font-weight: 600; display: inline-flex; gap: 6px; align-items: center; }
+.badge-unsaved .ico { width: 8px; height: 8px; }
+
+.strip { border-top: 1px solid var(--border); background: var(--surface-2); }
+.strip-inner { max-width: 1120px; margin: 0 auto; padding: 8px 24px; display: flex; flex-wrap: wrap; gap: 8px 20px; align-items: center; }
+.strip .spacer { flex: 1; }
+.pchip { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; color: var(--muted); }
+a.pchip { text-decoration: none; }
+a.pchip:hover strong { text-decoration: underline; }
+.pchip strong { color: var(--text); font-weight: 600; }
+.pchip.ok .ico { color: var(--ok); }
+.pchip.warn .ico { color: var(--warn); }
+
+/* The Save button: plain while nothing changed, accented with a small dot while there are
+   unsaved changes, and a check mark for a moment after saving. */
+.btn.save { position: relative; }
+.btn.save.is-dirty, .btn.save.is-saved { background: var(--accent); border-color: var(--accent); color: var(--on-accent); font-weight: 600; }
+.btn.save.is-saved { background: var(--ok); border-color: var(--ok); color: light-dark(#fff, #0d2a1e); }
+.draft-dot { position: absolute; top: -3px; right: -3px; width: 10px; height: 10px; border-radius: 50%;
+  background: var(--warn); border: 2px solid var(--surface); }
+
+/* Save marks (setSaveMark in ui.js): "Saved" after a control that saves at once, and the
+   Save button's dot with "Not saved yet" after one that needs Save. */
+.save-mark { display: inline-flex; align-items: center; gap: 6px; font-size: 12.5px; font-weight: 600; white-space: nowrap; }
+.save-mark .ico { width: 14px; height: 14px; }
+.save-mark.saved { color: var(--ok); }
+.save-mark.pending { color: var(--warn); }
+.save-mark .dot { width: 10px; height: 10px; border-radius: 50%; background: var(--warn); }
+
+/* The automatic-processing state pill, on the settings page and in the toolbar popup. */
+.state-pill { font-weight: 600; border: 1px solid transparent; }
+.state-pill.on { background: var(--ok-soft); color: var(--ok); border-color: color-mix(in srgb, var(--ok) 45%, var(--border)); }
+.state-pill.paused { background: var(--warn-soft); color: var(--warn); border-color: color-mix(in srgb, var(--warn) 45%, var(--border)); }
+.state-pill.off { background: var(--surface-2); color: var(--muted); border-color: var(--border); }
+
+/* A group that can't be changed right now: its fields are inactive, a lock line says why. */
+.lock-group { display: flex; flex-direction: column; gap: 18px; }
+.is-locked label { color: var(--muted); }
+.lock-reason { display: flex; align-items: center; gap: 6px; margin: 0; font-size: 12.5px; color: var(--muted); }
+.lock-reason .ico { width: 13px; height: 13px; }
+
+/* Info tips (infoTip in ui.js) */
+.label-row { display: inline-flex; align-items: center; gap: 2px; }
+.tip { position: relative; display: inline-flex; vertical-align: middle; }
+.tip-btn { width: 22px; height: 22px; padding: 0; border: 0; border-radius: 50%; background: transparent; color: var(--muted);
+  display: inline-grid; place-items: center; }
+.tip-btn:hover, .tip-btn[aria-expanded="true"] { color: var(--link); background: var(--accent-soft); }
+.tip-btn .ico { width: 14px; height: 14px; vertical-align: 0; }
+.tip-pop { position: absolute; z-index: 30; top: calc(100% + 6px); left: 0; width: max-content; max-width: min(300px, 80vw);
+  padding: 8px 12px; border-radius: 8px; border: 1px solid var(--border-strong); background: var(--surface);
+  box-shadow: 0 4px 16px rgb(0 0 0 / 18%); color: var(--text); font-size: 12.5px; font-weight: 400; line-height: 1.45;
+  letter-spacing: 0; text-transform: none; white-space: normal; text-align: left; }
+.tip-pop.end { left: auto; right: 0; }
+
+@media (max-width: 640px) {
+  .topbar-inner, .strip-inner { padding-left: 16px; padding-right: 16px; }
+  .topbar { position: static; }
+  .topbar-inner { flex-wrap: wrap; }
+  .topbar h1 { flex-basis: 100%; }
+  .badge-unsaved { margin-right: auto; }
+  .strip .spacer { display: none; }
+  .btn-label { display: none; }
+}
+
+/* Shown by page-guard.js when a page fails to load or is out of date */
+.page-error { margin: 0 0 12px; padding: 10px 14px; border: 1px solid var(--danger); border-radius: 8px;
+  background: var(--danger-soft); color: var(--text); display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+.page-error p { margin: 0; flex: 1 1 300px; }
+
+/* Preen's dialog (askDialog in ui.js), in place of the browser's confirm() and alert(). */
+.dialog-backdrop { position: fixed; inset: 0; z-index: 50; display: grid; place-items: center; padding: 16px;
+  background: color-mix(in srgb, #000 45%, transparent); }
+.dialog { display: flex; flex-direction: column; gap: 10px; width: min(440px, 100%); padding: 16px 18px; font-size: 13px;
+  background: var(--surface); color: var(--text); border: 1px solid var(--border); border-top: 3px solid var(--danger); border-radius: 10px; }
+.dialog-text { margin: 0; white-space: pre-line; }
+.dialog-buttons { display: flex; justify-content: flex-end; gap: 8px; flex-wrap: wrap; }
+
+/* Preen icon beside page titles and the popup name. */
+.brand-ico { width: 26px; height: 26px; margin-right: 10px; border-radius: 6px; vertical-align: -6px; }
+.brand-ico.sm { width: 18px; height: 18px; margin-right: 6px; border-radius: 4px; vertical-align: -4px; }
