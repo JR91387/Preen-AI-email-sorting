@@ -83,3 +83,7 @@ Preen, the Thunderbird addon using Jev, was conceived, written and managed by [J
 Photos are from Pixabay. See [CREDITS.md](CREDITS.md).
 
 Preen is licensed under the [PolyForm Shield License 1.0.0](LICENSE). You can use it for any purpose, including at work, except to provide a product or service that competes with Preen. It is source-available, not open source.
+
+---
+
+**More from Reinitz Industries:** [Job-o-Matic](https://github.com/JR91387/jobomatic-reusme-skills-database) · [Wagtail Kanban Content Calendar](https://github.com/JR91387/wagtail-kanban-content-calendar) · [/bully](https://github.com/JR91387/claude-skill-bully) · [/bruh](https://github.com/JR91387/claude-skill-bruh) · [Calendar Forge](https://github.com/JR91387/calendar-forge-ics)
